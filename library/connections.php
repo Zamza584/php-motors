@@ -3,18 +3,19 @@
 function phpmotorsconnect()
 {
 
-    $server = "localhost";
-    $dbname = "phpmotors";
-    $username = "IClient";
-    $password = "s)EewaObKg34JAE_";
+    $server = "changethis";
+    $dbname = "changethis";
+    $username = "changethis";
+    $password = "changethis";
     $dsn = "mysql:host=$server;dbname=$dbname";
     $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 
     try {
-        mysqli_connect($server, $username, $password, $dbname);
+        $link = new PDO($dsn, $username, $password, $options);
         
-    } catch (Exception $e) {
-        header('Location: /phpmotors/view/500.php');
+        return $link;
+    } catch (PDOException $e) {
+        header('Location: /view/500.php');
         exit;
     }
 }

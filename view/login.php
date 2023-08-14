@@ -11,7 +11,7 @@
 
 <body>
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
     <nav class="nav">
         <?php echo $navList; ?>
     </nav>
@@ -24,7 +24,7 @@
                 echo $_SESSION['login-message'];
             }
             ?>
-            <form class="form-login" method="post" action="/phpmotors/accounts/index.php">
+            <form class="form-login" method="post" action="/accounts/index.php">
                 <label for="clientEmail">Email</label>
                 <input name="clientEmail" id="clientEmail" type="email" required>
                 <label id="clientPassword" for="clientPassword">Password</label>
@@ -37,5 +37,5 @@
     </main>
 
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
 </body>

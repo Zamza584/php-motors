@@ -1,9 +1,9 @@
 <?php
 
 if (!$_SESSION['loggedin'] && !$_SESSION['clientData']['clientLevel']) {
-    header('Location: /phpmotors/index.php');
+    header('Location: /index.php');
 } elseif ($_SESSION['clientData']['clientLevel'] < 2) {
-    header('Location: /phpmotors/index.php');
+    header('Location: /index.php');
     exit;
 }
 if (isset($_SESSION['message'])) {
@@ -23,7 +23,7 @@ if (isset($_SESSION['message'])) {
 </head>
 
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
     <nav class="nav">
         <?php echo $navList; ?>
     </nav>
@@ -32,8 +32,8 @@ if (isset($_SESSION['message'])) {
             <h1>Vehicle Management</h1>
             <ul class="vehicle-managment">
                 <li>
-                    <a href="/phpmotors/vehicles/index.php?action=classification-page">Add Classification</a>
-                    <a href="/phpmotors/vehicles/index.php?action=classificationList">Add Vehicle</a>
+                    <a href="/vehicles/index.php?action=classification-page">Add Classification</a>
+                    <a href="/vehicles/index.php?action=classificationList">Add Vehicle</a>
                 </li>
             </ul>
             <?php
@@ -55,7 +55,7 @@ if (isset($_SESSION['message'])) {
     </main>
 
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
     <script src="../js/inventory.js"></script>
 </body>
 

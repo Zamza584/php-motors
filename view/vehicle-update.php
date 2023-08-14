@@ -1,9 +1,9 @@
 <?php
 
 if (!$_SESSION['loggedin'] && !$_SESSION['clientData']['clientLevel']) {
-    header('Location: /phpmotors/index.php');
+    header('Location: /index.php');
 } elseif ($_SESSION['clientData']['clientLevel'] < 2) {
-    header('Location: /phpmotors/index.php');
+    header('Location: /index.php');
 }
 
 $classifList = "<label for='classificationId'>Car Classifications</label>";
@@ -45,7 +45,7 @@ $classifList .= '</select>';
 
 <body>
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
     <nav class="nav">
         <?php echo $navList; ?>
     </nav>
@@ -64,7 +64,7 @@ $classifList .= '</select>';
             }
             ?>
             <p>*Note: All fields are required</p>
-            <form class="vehicle-form" action="/phpmotors/vehicles/index.php" method="post">
+            <form class="vehicle-form" action="/vehicles/index.php" method="post">
 
 
                 <?php echo $classifList ?>
@@ -91,13 +91,13 @@ $classifList .= '</select>';
                                                                                         } ?>
                 </textarea>
                 <label for="invImage">Image Path</label>
-                <input name="invImage" id="invImage" value="/phpmotors/images/no-image.jpg" type="text" <?php if (isset($invImage)) {
+                <input name="invImage" id="invImage" value="/images/no-image.jpg" type="text" <?php if (isset($invImage)) {
                                                                                                             echo "value='$invImage'";
                                                                                                         } elseif (isset($invInfo['invImage'])) {
                                                                                                             echo "value='$invInfo[invImage]'";
                                                                                                         } ?> required>
                 <label for="invThumbnail">Thumbnail</label>
-                <input name="invThumbnail" id="invThumbnail" type="text" value="/phpmotors/images/no-image.jpg" required <?php if (isset($invThumbnail)) {
+                <input name="invThumbnail" id="invThumbnail" type="text" value="/images/no-image.jpg" required <?php if (isset($invThumbnail)) {
                                                                                                                                 echo "value='$invThumbnail'";
                                                                                                                             } elseif (isset($invInfo['invThumbnail'])) {
                                                                                                                                 echo "value='$invInfo[invThumbnail]'";
@@ -136,5 +136,5 @@ $classifList .= '</select>';
     </main>
 
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
 </body>

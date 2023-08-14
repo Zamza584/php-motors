@@ -11,7 +11,7 @@
 
 <body>
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
     <nav class="nav">
         <?php echo $navList; ?>
     </nav>
@@ -24,7 +24,7 @@
                 echo $_SESSION['reg-message'] ;
             }
             ?>
-            <form class="form-registration" method="post" action="/phpmotors/accounts/index.php">
+            <form class="form-registration" method="post" action="/accounts/index.php">
                 <label for="clientFirstname">First Name</label>
                 <input name="clientFirstname" id="clientFirstname" type="text" <?php 
                 if (isset($clientFirstname)) { 
@@ -51,5 +51,5 @@
         </section>
     </main>
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
 </body>

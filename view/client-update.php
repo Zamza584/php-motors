@@ -16,7 +16,7 @@ if ($_SESSION['clientData']) {
 
 <body>
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
     <nav class="nav">
         <?php echo $navList; ?>
     </nav>
@@ -31,7 +31,7 @@ if ($_SESSION['clientData']) {
             }
             ?>
 
-            <form class="form-registration" method="post" action="/phpmotors/accounts/index.php?action=accountUpdate">
+            <form class="form-registration" method="post" action="/accounts/index.php?action=accountUpdate">
                 <label for="clientFirstname">First Name</label>
                 <input name="clientFirstname" id="clientFirstname" type="text" <?php
                                                                                 echo "value='$client[clientFirstname]'";
@@ -58,7 +58,7 @@ if ($_SESSION['clientData']) {
                 }
                 ?>
             </p>
-            <form class="form-registration" method="post" action="/phpmotors/accounts/index.php?action=changePassword">
+            <form class="form-registration" method="post" action="/accounts/index.php?action=changePassword">
                 <p>Passwords must be at least 8 characters and contain at least 1 number, 1 capitol letter and 1 special character.</p>
                 <p>* Entering a new password will change the current one.</p>
                 <label for="clientPassword">Password</label>
@@ -70,7 +70,7 @@ if ($_SESSION['clientData']) {
             </form>
         </div>
     </main>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
 
 </body>
 

@@ -1,9 +1,9 @@
 <?php
 
 if (!$_SESSION['loggedin'] && !$_SESSION['clientData']['clientLevel']) {
-    header('Location: /phpmotors/index.php');
+    header('Location: /index.php');
 } elseif ($_SESSION['clientData']['clientLevel'] < 2) {
-    header('Location: /phpmotors/index.php');
+    header('Location: /index.php');
 }
 
 ?>
@@ -26,7 +26,7 @@ if (!$_SESSION['loggedin'] && !$_SESSION['clientData']['clientLevel']) {
 
 <body>
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
     <nav class="nav">
         <?php echo $navList; ?>
     </nav>
@@ -45,7 +45,7 @@ if (!$_SESSION['loggedin'] && !$_SESSION['clientData']['clientLevel']) {
             }
             ?>
             <p>*Note: All fields are required</p>
-            <form class="vehicle-form" action="/phpmotors/vehicles/index.php" method="post">
+            <form class="vehicle-form" action="/vehicles/index.php" method="post">
                 <label for="invMake">Vehicle Make</label>
                 <input type="text" name="invMake" id="invMake" readonly <?php if (isset($invMake)) {
                                                                             echo "value='$invMake'";
@@ -78,5 +78,5 @@ if (!$_SESSION['loggedin'] && !$_SESSION['clientData']['clientLevel']) {
     </main>
 
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
 </body>

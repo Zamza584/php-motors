@@ -11,7 +11,7 @@
 
 <body>
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
     <?php include '../common/navigation.php' ?>
     <main>
         <section>

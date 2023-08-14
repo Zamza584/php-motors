@@ -44,7 +44,7 @@ switch ($action) {
 
         if ($regOutcome === 1) {
             $message = "<p class='alert-message'>You just registered $classificationName.</p>";
-            header("Location: /phpmotors/vehicles/index.php");
+            header("Location: /vehicles/index.php");
             exit;
         } else {
             $message = "<p class='alert-message'>Sorry $classificationName, but we couldn't add the classification at this moment.</p>";
@@ -153,12 +153,12 @@ switch ($action) {
         if ($updateResult) {
             $message = "<p class='notify'>Congratulations, the $invMake $invModel was successfully updated.</p>";
             $_SESSION['message'] = $message;
-            header('location: /phpmotors/vehicles/');
+            header('location: /vehicles/');
             exit;
         } else {
             $message = "<p>Error. The update was not successful.</p>";
             $_SESSION['message'] = $message;
-            header('location: /phpmotors/vehicles/');
+            header('location: /vehicles/');
             exit;
         }
 
@@ -186,13 +186,13 @@ switch ($action) {
         if ($deleteResult) {
             $message = "<p class='notify'>Congratulations, the $invMake $invModel was successfully deleted.</p>";
             $_SESSION['message'] = $message;
-            header('location: /phpmotors/vehicles/');
+            header('location: /vehicles/');
             exit;
         } else {
             $message = "<p class='notice'>Error: $invMake $invModel was not
             deleted.</p>";
             $_SESSION['message'] = $message;
-            header('location: /phpmotors/vehicles/');
+            header('location: /vehicles/');
             exit;
         }
 

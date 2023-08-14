@@ -1,8 +1,8 @@
 <?php
 if (!$_SESSION['loggedin'] && !$_SESSION['clientData']['clientLevel']) {
-    header('Location: /phpmotors/index.php');
+    header('Location: /index.php');
 } elseif ($_SESSION['clientData']['clientLevel'] < 2) {
-    header('Location: /phpmotors/index.php');
+    header('Location: /index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ if (!$_SESSION['loggedin'] && !$_SESSION['clientData']['clientLevel']) {
 
 <body>
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
     <nav class="nav">
         <?php echo $navList; ?>
     </nav>
@@ -30,7 +30,7 @@ if (!$_SESSION['loggedin'] && !$_SESSION['clientData']['clientLevel']) {
                 echo $message;
             }
             ?>
-            <form action="/phpmotors/vehicles/index.php" method="post">
+            <form action="/vehicles/index.php" method="post">
                 <label for="classificationName">Classification Name</label>
                 <input id="classificationName" name="classificationName" type="text" pattern="^.{1,30}$" required>
                 <button class="btn" name="action" type="submit" name="submit" value="addClassification">Add Classification</button>
@@ -40,5 +40,5 @@ if (!$_SESSION['loggedin'] && !$_SESSION['clientData']['clientLevel']) {
     </main>
 
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
 </body>

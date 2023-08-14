@@ -18,9 +18,9 @@ function createNavList($carclassifications)
 {
     //Function creates navigation menu using data from car classifications found in database. 
     $navList = "<ul class='nav-container'>";
-    $navList .= "<li><a href='/phpmotors/' title='View the PHP Motors home page'>Home</a></li>";
+    $navList .= "<li><a href='/' title='View the PHP Motors home page'>Home</a></li>";
     foreach ($carclassifications as $classification) {
-        $navList .= "<li><a href='/phpmotors/vehicles/?action=classification&classificationName=" . urlencode($classification['classificationName']) . "' title='View our $classification[classificationName] lineup of vehicles'>$classification[classificationName]</a></li>";
+        $navList .= "<li><a href='/vehicles/?action=classification&classificationName=" . urlencode($classification['classificationName']) . "' title='View our $classification[classificationName] lineup of vehicles'>$classification[classificationName]</a></li>";
     }
     $navList .= '</ul>';
     return $navList;
@@ -119,9 +119,9 @@ function buildVehiclesDisplay($vehicles)
     $dv = '<ul id="inv-display">';
     foreach ($vehicles as $vehicle) {
         $dv .= '<li>';
-        $dv .= "<a href='/phpmotors/vehicles/?action=vehicleInfo&vehicleId=" . urlencode($vehicle["invId"]) . "'><img src='$vehicle[imgPath]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'></a>";
+        $dv .= "<a href='/vehicles/?action=vehicleInfo&vehicleId=" . urlencode($vehicle["invId"]) . "'><img src='$vehicle[imgPath]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'></a>";
         $dv .= '<hr>';
-        $dv .= "<h2><a href='/phpmotors/vehicles/?action=vehicleInfo&vehicleId=" . urlencode($vehicle["invId"]) . "'>$vehicle[invMake] $vehicle[invModel]</a></h2>";
+        $dv .= "<h2><a href='/vehicles/?action=vehicleInfo&vehicleId=" . urlencode($vehicle["invId"]) . "'>$vehicle[invMake] $vehicle[invModel]</a></h2>";
         $dv .= "<span> $" . number_format($vehicle["invPrice"]) . "</span>";
         $dv .= '</li>';
     }
@@ -168,7 +168,7 @@ function buildImageDisplay($imageArray)
     foreach ($imageArray as $image) {
         $id .= '<li>';
         $id .= "<img src='$image[imgPath]' title='$image[invMake] $image[invModel] image on PHP Motors.com' alt='$image[invMake] $image[invModel] image on PHP Motors.com'>";
-        $id .= "<p><a href='/phpmotors/uploads?action=delete&imgId=$image[imgId]&filename=$image[imgName]' title='Delete the image'>Delete $image[imgName]</a></p>";
+        $id .= "<p><a href='/uploads?action=delete&imgId=$image[imgId]&filename=$image[imgName]' title='Delete the image'>Delete $image[imgName]</a></p>";
         $id .= '</li>';
     }
     $id .= '</ul>';

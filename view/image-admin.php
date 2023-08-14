@@ -15,7 +15,7 @@ if (isset($_SESSION['message'])) {
 </head>
 
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
     <nav class="nav">
         <?php echo $navList; ?>
     </nav>
@@ -28,7 +28,7 @@ if (isset($_SESSION['message'])) {
             if (isset($message)) {
                 echo $message;
             } ?>
-            <form class="image-admin-form" action="/phpmotors/uploads/" method="post" enctype="multipart/form-data">
+            <form class="image-admin-form" action="/uploads/" method="post" enctype="multipart/form-data">
                 <label for="invItem">Vehicle</label>
                 <?php echo $prodSelect; ?>
                 <fieldset>
@@ -56,7 +56,7 @@ if (isset($_SESSION['message'])) {
             } ?>
         </div>
     </main>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
 
 </body>
 

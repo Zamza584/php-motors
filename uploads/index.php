@@ -19,7 +19,7 @@ if ($action == NULL) {
 * Variables for use with the Image Upload Functionality
 * **************************************************** */
 
-$image_dir = '/phpmotors/images/vehicles';
+$image_dir = '/images/vehicles';
 $image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
 
 

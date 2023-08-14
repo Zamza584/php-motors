@@ -53,7 +53,7 @@ switch ($action) {
             setcookie('email', $clientEmail, strtotime('+1 year'), '/');
 
             $_SESSION['login-message'] = "Thanks for registering $clientFirstname. Please use your email and password to login.";
-            header('Location: /phpmotors/accounts/?action=login-page');
+            header('Location: /accounts/?action=login-page');
             exit;
         } else {
             $_SESSION['reg-message'] = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
@@ -105,14 +105,14 @@ switch ($action) {
         $_SESSION['clientData'] = $clientData;
         // Send them to the admin view
 
-        header('location: /phpmotors/accounts/index.php?action=viewAdmin');
+        header('location: /accounts/index.php?action=viewAdmin');
         exit;
         break;
 
     case 'logout':
         $_SESSION = array();
         session_destroy();
-        header('Location: /phpmotors/index.php');
+        header('Location: /index.php');
 
     case 'login-page':
         unset($_SESSION["login-message"]);

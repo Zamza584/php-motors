@@ -1,6 +1,6 @@
 <?php
 if (!$_SESSION['loggedin']) {
-    header('Location: /phpmotors/accounts/?action=login');
+    header('Location: /accounts/?action=login');
 }
 ?>
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ if (!$_SESSION['loggedin']) {
 </head>
 
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
     <nav class="nav">
         <?php echo $navList; ?>
     </nav>
@@ -35,12 +35,12 @@ if (!$_SESSION['loggedin']) {
             </ul>
             <h1>Account Managment</h1>
             <p>Use this link to update account information</p>
-            <p><a href="/phpmotors/accounts/index.php?action=update-view">Update Account Information</a></p>
+            <p><a href="/accounts/index.php?action=update-view">Update Account Information</a></p>
 
             <?php if ($_SESSION['clientData']['clientLevel'] > 1) {
                 echo "<h1>Inventory Managment</h1>
                 <p>Use this link to manage inventory.</p>";
-                echo "<p><a href='/phpmotors/vehicles/index.php'>Vehicle Managment</a></p>";
+                echo "<p><a href='/vehicles/index.php'>Vehicle Managment</a></p>";
             } ?>
 
             <?php
@@ -49,7 +49,7 @@ if (!$_SESSION['loggedin']) {
 
         </section>
     </main>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
 </body>
 
 </html>
